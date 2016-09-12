@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Select {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Insert instance = new Insert();
         while (in.hasNext()) {
             String input = in.nextLine();
             String[] inputArray = input.split(",");
