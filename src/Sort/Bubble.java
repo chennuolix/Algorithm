@@ -18,17 +18,24 @@ public class Bubble {
                 numbers[i] = Integer.parseInt(inputArray[i]);
             }
             boolean isChange = false;
+            int i;
+            int pos = numbers.length - 1;
             for (int k = numbers.length - 1; k >= 0; k--) {
-                for (int i = 0; i < k; i++) {
+                for (i = 0; i < pos; i++) {
                     if (numbers[i] > numbers[i + 1]) {
                         Swap.ArraySwap(numbers, i, i + 1);
                         isChange = true;
                     }
                 }
-                if (!isChange){
+                pos = i;
+                if (!isChange) {
                     break;
                 }
             }
+            for (int number : numbers) {
+                System.out.print(number + " ");
+            }
+            System.out.println("");
         }
     }
 }

@@ -20,10 +20,10 @@ public class Heap {
                 numbers[i] = Integer.parseInt(inputArray[i]);
             }
             instance.BuildHeap(numbers, numbers.length);
-            for (int k = numbers.length - 1; k > 0; k--) {
+            for (int k = numbers.length - 1 ; k > 0; k--) {
                 Swap.ArraySwap(numbers, 0, k);
                 //将剩下的数组，重新调整为大顶堆
-                instance.BuildHeap(numbers, k - 1);
+                instance.BuildHeap(numbers, k);
             }
             for (int number : numbers) {
                 System.out.print(number + " ");
@@ -39,14 +39,14 @@ public class Heap {
      * @param index
      */
     private void HeapAdjust(int[] array, int index, int size) {
-        if (index < size / 2) {         //如果是叶节点 就不用调整了
+        if (index < size / 2 ) {         //如果是叶节点 就不用调整了
             int lchild = index * 2 + 1;
             int rchild = index * 2 + 2;
             int max = index;
-            if (lchild < array.length && array[max] < array[lchild]) {
+            if (lchild < size && array[max] < array[lchild]) {
                 max = lchild;
             }
-            if (rchild < array.length && array[max] < array[rchild]) {
+            if (rchild < size && array[max] < array[rchild]) {
                 max = rchild;
             }
             if (max != index) {
